@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30">
+  <g id="watch-icon" transform="translate(0 -3)">
+    <g id="Group_76" data-name="Group 76">
+      <g id="Group_75" data-name="Group 75">
+        <path id="Path_16" data-name="Path 16" d="M15,30A15,15,0,1,0,0,15,15,15,0,0,0,15,30ZM13.929,6.429a1.071,1.071,0,1,1,2.143,0v8.057l4.955,3.964a1.071,1.071,0,0,1-.67,1.907,1.054,1.054,0,0,1-.67-.236L14.33,15.836a1.075,1.075,0,0,1-.4-.836V6.429Z" transform="translate(0 3)" fill="#ed7e9e"/>
+      </g>
+    </g>
+  </g>
+</svg>
