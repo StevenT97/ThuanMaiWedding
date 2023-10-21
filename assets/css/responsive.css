@@ -717,6 +717,9 @@
             padding-left: 0;
             padding-right: 0;
         }
+        .image-bottom {
+            padding-top: 70px;
+        }
         .accomodation-2 {
             padding: 120px 0 229px 0;
         }

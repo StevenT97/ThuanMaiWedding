@@ -4611,7 +4611,11 @@ ul.dropdown-menu.c-drpdwn-menu.c-drpdwn-menu-right.show {
 }
 
 .index-2-blog {
-    padding: 120px 0 110px 0;
+    background-image: url('../images/banners/banner-bottom-chibi.png');
+    background-size: cover;
+    padding: 650px 0 110px 0;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
 .index-2-blog .blog {
