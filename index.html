@@ -5,8 +5,8 @@
 <head>
     <title>Thuận Mai Wedding</title>
     <meta charset="utf-8">
-    <meta name="description" content="Marriage Ceremony, Wedding Responsive Template">
-    <meta name="keywords" content="Marriage Ceremony, Wedding Ceremony, Wedding invitation ">
+    <meta name="description" content="Thuan Mai Wedding">
+    <meta name="keywords" content="Thuan Mai Wedding">
     <meta name="author" content="differenz-system">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -25,27 +25,6 @@
 </head>
 
 <body class="index-2">
-    <div id="options-setting" style="display: none;">
-        <div id="setting-button-wrapper">
-            <a id="setting-button" href="#">
-                <div class="de-icon square light small-size inline" style="border:1px solid #CCC;">
-                    <i class="fas fa-gear"></i>
-                </div>
-            </a>
-        </div>
-        <div>
-            <h5>TEMPLATE COLOR</h5>
-            <div style="position:relative">
-                <a href="#" id="teal"><span class="switches">&nbsp;</span></a>
-                <a href="#" id="blue"><span class="switches">&nbsp;</span></a>
-                <a href="#" id="brown"><span class="switches">&nbsp;</span></a>
-                <a href="#" id="purple"><span class="switches">&nbsp;</span></a>
-                <a href="#" id="peach"><span class="switches">&nbsp;</span></a>
-                <a href="#" id="reset-color"><span>Reset</span></a>
-            </div>
-        </div>
-    </div>
-
     <div id="load">
         <img src="assets/images/loader.svg" alt="loader" />
     </div>
@@ -58,16 +37,16 @@
                     <div class="menu">
                         <div class="site-logo">
                             <a href="index.html">
-                                <img src="assets/images/logo-tm-light.png" alt="Differenz Wedding" class="logo-light" />
-                                <img src="assets/images/logo-tm-dark.png" alt="Differenz Wedding" class="logo-dark" />
+                                <img src="assets/images/logo-tm-light.png" alt="Thuan Mai Wedding" class="logo-light" />
+                                <img src="assets/images/logo-tm-dark.png" alt="Thuan Mai Wedding" class="logo-dark" />
                             </a>
                         </div>
                         <div class="second-menu one_page_menu">
                             <ul id="top-menu">
-                                <li class="nav-item active">
+                                <li class="nav-item" style="display: none;">
                                     <a class=" nav-link" href="#home">Trang Chính</a>
                                 </li>
-                                <li class="nav-item" style="">
+                                <li class="nav-item active">
                                     <a class=" nav-link" href="#about">Giới Thiệu</a>
                                 </li>
                                 <li class="nav-item" style="display: none;">
@@ -100,7 +79,7 @@
                     <a href="index-2.html">
                         <img src="assets/images/logo-tm-dark.png" class="m-diff-main-logo" alt="Differenz Wedding">
                     </a>
-                    <a href="#home" onclick="onePageCloseNav()">Trang Chính</a>
+                    <a href="#home" onclick="onePageCloseNav()" style="display: none;">Trang Chính</a>
                     <a href="#about" onclick="onePageCloseNav()">Giới Thiệu</a>
                     <a href="#event" onclick="onePageCloseNav()">Sự Kiện</a>
                     <a href="#gallery" onclick="onePageCloseNav()">Ảnh Cưới</a>
@@ -130,11 +109,19 @@
                                         class="primary-text">&#38;</span> Nguyễn Mai</h1>
 
                                 <div class="middle-content font-pacifico mb-2">
-                                    <h3 data-aos="fade-in" data-aos-delay="2000" data-aos-duration="1000" class="">
-                                        We are getting married
-                                    </h3>
+                                    <div data-aos="fade-in" data-aos-delay="2000" data-aos-duration="1000">
+                                        <h4>
+                                            We are getting married
+                                        </h4>
+                                        <img data-aos="zoom-in" data-aos-delay="2000" data-aos-duration="1000" src="assets/images/icons/heart-line.svg" alt="heart-line" />
+                                        <h6>
+                                            09-12-2023
+                                        </h6>
+                                    </div>
+                                    
+                                    <!-- <img data-aos="fade-in" data-aos-delay="2000" data-aos-duration="1000" src="assets/images/icons/heart-line.svg" alt="heart-line" /> -->
+                                   
                                 </div>
-
                                 <div class="box">
                                     <div class="allTime">
                                         <div class="wp days" data-aos="fade-up" data-aos-duration="1500"
@@ -435,12 +422,11 @@
                 </div>
                 <div class="row justify-content-center ">
                     <div class="col-lg-12" id="filter">
-
                         <ul class="new-tab filter-category">
                             <li class="li-btn active" onclick="filterSelection('all')">All</li>
-                            <li class="li-btn " onclick="filterSelection('groom')">Groom</li>
+                            <!-- <li class="li-btn " onclick="filterSelection('groom')">Groom</li>
                             <li class="li-btn" onclick="filterSelection('bride')">Bride</li>
-                            <li class="li-btn" onclick="filterSelection('wedding')">Wedding</li>
+                            <li class="li-btn" onclick="filterSelection('wedding')">Wedding</li> -->
                         </ul>
                     </div>
                     <div class="gallery_new c-gallery-3 inner-top-space">
@@ -527,6 +513,11 @@
                                 <img src="assets/images/icons/search.svg" alt="search">
                             </div>
                             <div class="gallery-overlay"></div>
+                        </a>
+                    </div>
+                    <div class="col-lg-12" style="text-align: end;margin-top: 20px;">
+                        <a type="button" href="gallery.html" class="btn primary-btn mt-0">
+                            <img src="assets/images/icons/wedding-circle.svg" class="w-25" /> Xem Albums
                         </a>
                     </div>
                 </div>

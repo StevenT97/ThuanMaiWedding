@@ -1068,8 +1068,8 @@ header.sidebar-menu .menubar {
 }
 
 .middle-content {
-    margin-top: 40px;
-    padding: 10px 0 20px 0;
+    margin-top: 10px;
+    padding: 10px 0 10px 0;
     position: relative;
 }
 
@@ -4381,7 +4381,7 @@ ul.dropdown-menu.c-drpdwn-menu.c-drpdwn-menu-right.show {
 }
 
 .index-2 .box {
-    margin-top: 20px;
+    margin-top: 0px;
 }
 
 .index-2 .allTime .wp {
@@ -5118,8 +5118,14 @@ ul.dropdown-menu.c-drpdwn-menu.c-drpdwn-menu-right.show {
 
 .middle-content {
     text-align: center;
+    font-size: 12px;
+    line-height: 40px;
+}
+
+.middle-content-album {
+    text-align: center;
     font-size: 45px;
-    line-height: 70px;
+    line-height: 40px;
 }
 
 .c-heart-slider {
@@ -5419,8 +5425,8 @@ ul.dropdown-menu.c-drpdwn-menu.c-drpdwn-menu-right.show {
 }
 
 .video-banner .allTime .wp {
-    min-width: 200px;
-    height: 200px;
+    min-width: 150px;
+    height: 150px;
     margin: 10px;
     background: url(../images/banners/clock-bg.png);
     float: left;
@@ -5431,7 +5437,7 @@ ul.dropdown-menu.c-drpdwn-menu.c-drpdwn-menu-right.show {
     background-position: center;
     background-repeat: no-repeat;
     background-size: contain;
-    font-size: 36px;
+    font-size: 30px;
 }
 
 .video-banner .allTime .wp span {
