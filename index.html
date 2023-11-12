@@ -625,7 +625,7 @@
                                                     </div>
                                                     <div class="col-lg-12">
                                                         <button type="button" id="btnSendMessage" class="btn primary-btn w-100 c-send-invite-btn mt-0">
-                                                            <i class="fa-solid fa-paper-plane"></i> Gửi
+                                                            <i class="fa-solid fa-paper-plane"></i> <span>Gửi</span>
                                                         </button>
 
                                                     </div>
@@ -815,6 +815,36 @@
                 </div>
             </div>
         </section>
+
+        <!--Section Modal-->
+        <section>
+            <div class="modal fade" id="thankYouModal" tabindex="-1" role="dialog" aria-label="rsvpModalTitle" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered modal-lg" role="document" style="max-width: 750px;">
+                    <div class="modal-content">
+                        <div class="modal-body">
+                            <div class="row">
+                                <div class="col-md-12 text-center">
+                                    <h5 class="font-pacifico primary-text mb-4">Thank You!</h5>
+                                </div>
+                                <div class="col-lg-12" style="text-align: center;">
+                                    <div style="padding-bottom: 1.5rem;">
+                                        <p>Cảm ơn những lời chúc quý giá của bạn đến cô dâu chú rể nhé! &#9829;</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <div class="row" style="float: right;">
+                                <button id="btnCloseThankYouModal" type="button" class="btn primary-btn w-100" style="font-size: 20px;">
+                                    Okela!!
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <footer class="footer">
             <div class="container">
                 <div class="row">
@@ -920,32 +950,6 @@
         /* ------------------------------ onepage  ----------------------------- */
         $(document).ready(function ()
         {
-            // jQuery.validator.addMethod("noSpace", function(value, element) { 
-            //     return value == '' || value.trim().length != 0;
-            // }, "No space please and don't leave it empty");
-            // $("form[name='contactForm']").validate({
-            //     // Define validation rules
-            //     rules: {
-            //         your_name:{
-            //             required : true,
-            //             noSpace : true
-            //         },
-            //         message_content:{
-            //             required : true,
-            //             noSpace : true
-            //         },
-            //     },
-            //     // Specify validation error messages
-            //     messages: {
-            //         your_name:{
-            //             required : "Vui lòng nhập tên của bạn."
-            //         },
-            //         message_content:{
-            //             required : "Vui lòng nhập nội dung."
-            //         },
-            //     },
-            // });
-
             //
             $('#btnSendMessage').on('click', function(){
 
@@ -968,17 +972,24 @@
                         },
                         beforeSend: function(xhr){
                             $("#btnSendMessage").prop("disabled", true);
+                            $("#btnSendMessage span").text("Đang gửi...");
                         },
-                        success : function(data) {              
-                            alert('Data: '+data); // Success callback
+                        success : function(data) {
+                            $("#thankYouModal").modal("show", "fast");
                             $("#btnSendMessage").prop("disabled", false);
+                            $("#btnSendMessage span").text("Gửi");
                         },
                         error : function(request,error){
-                            alert("ERROR: "+JSON.stringify(request)); // Error callback
+                            $("#thankYouModal").modal("show", "fast");
                             $("#btnSendMessage").prop("disabled", false);
+                            $("#btnSendMessage span").text("Gửi");
                         }
                     });
                 }
+            })
+            //
+            $("#btnCloseThankYouModal").on('click', function(){
+                $("#thankYouModal").modal("hide");
             })
         }); 
 
