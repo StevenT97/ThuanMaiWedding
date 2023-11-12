@@ -960,7 +960,7 @@
                         url : 'https://script.google.com/macros/s/AKfycbwRgtHzuWPTYwo8Uti0OreqvMyBdstzFW_LjiLNPbg_wbGh20gMD1AIXFkprZRTuMCb/exec', // Replace with your ajax url
                         type : 'POST',
                         async: true,
-                        data : postData,
+                        data : JSON.stringify(postData),
                         contentType: "application/json",
                         beforeSend: function(xhr){
                             $("#btnSendMessage").prop("disabled", true);
