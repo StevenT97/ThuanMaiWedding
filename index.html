@@ -605,26 +605,26 @@
                                             <h3 class="section-title font-great-vibe primary-text">Gửi lời chúc</h3>
                                         </div>
                                         <div class="col-md-11 col-lg-11">
-                                            <form class="form-3" action="https://marriage.differenz.agency/onepage/RSVP.php" method="post" name="contactForm">
+                                            <form class="form-3" name="contactForm" method="post">
                                                 <div class="row ">
                                                     <div class="col-lg-12 form-group">
                                                         <img src="assets/images/icons/user.svg" class="input-img"
-                                                            alt="user">
-                                                        <input type="text" name="first_name" class="form-control" placeholder="Tên của bạn">
+                                                            alt="user" style="top: 25px">
+                                                        <input type="text" id="your_name" name="your_name" class="form-control" placeholder="Tên của bạn">
                                                     </div>
                                                     <div class="col-lg-12 form-group">
                                                         <div class="heart-checkbox-style">
                                                             <label class="heart-checkbox">Thả tym
-                                                                <input type="checkbox" name="dance_party" checked="checked">
+                                                                <input type="checkbox" name="heartdrop" checked="checked">
                                                                 <span class="checkmark"></span>
                                                             </label>
                                                         </div>
                                                     </div>
                                                     <div class="col-lg-12 form-group">
-                                                        <textarea rows="5" class="form-control ps-3" name="message" placeholder="Lời chúc đến cô dâu chú rể ^^"></textarea>
+                                                        <textarea rows="5" class="form-control ps-3" id="message_content" name="message_content" placeholder="Lời chúc đến cô dâu chú rể ^^"></textarea>
                                                     </div>
                                                     <div class="col-lg-12">
-                                                        <button type="button" class="btn primary-btn w-100 c-send-invite-btn mt-0">
+                                                        <button type="button" id="btnSendMessage" class="btn primary-btn w-100 c-send-invite-btn mt-0">
                                                             <i class="fa-solid fa-paper-plane"></i> Gửi
                                                         </button>
 
@@ -920,47 +920,80 @@
         /* ------------------------------ onepage  ----------------------------- */
         $(document).ready(function ()
         {
-            jQuery.validator.addMethod("noSpace", function(value, element) { 
-                return value == '' || value.trim().length != 0;
-            }, "No space please and don't leave it empty");
-            $("form[name='contactForm']").validate({
-                // Define validation rules
-                rules: {
-                    first_name:{
-                        required : true,
-                        noSpace : true
-                    },
-                    last_name:{
-                        required : true,
-                        noSpace : true
-                    },
-                    email:{
-                        required : true,
-                        noSpace : true,
-                        email:true
-                    },
-                    message:{
-                        required : true,
-                        noSpace : true
-                    },
-                },
-                // Specify validation error messages
-                messages: {
-                    first_name:{
-                        required : "Please provide a first name."
-                    },
-                    last_name:{
-                        required : "Please provide a last name."
-                    },
-                    email:{
-                        required : "Please provide a email address."
-                    },
-                    message:{
-                        required : "Please provide a message."
-                    },
-                },
-            });
+            // jQuery.validator.addMethod("noSpace", function(value, element) { 
+            //     return value == '' || value.trim().length != 0;
+            // }, "No space please and don't leave it empty");
+            // $("form[name='contactForm']").validate({
+            //     // Define validation rules
+            //     rules: {
+            //         your_name:{
+            //             required : true,
+            //             noSpace : true
+            //         },
+            //         message_content:{
+            //             required : true,
+            //             noSpace : true
+            //         },
+            //     },
+            //     // Specify validation error messages
+            //     messages: {
+            //         your_name:{
+            //             required : "Vui lòng nhập tên của bạn."
+            //         },
+            //         message_content:{
+            //             required : "Vui lòng nhập nội dung."
+            //         },
+            //     },
+            // });
+
+            //
+            $('#btnSendMessage').on('click', function(){
+
+                if(validateMessageForm()){
+                    let postData = {
+                            param1 : $('#your_name').val(),
+                            param2 : $('#message_content').val()
+
+                        };
+                    //Send request
+                    $.ajax({
+                        url : 'https://script.google.com/macros/s/AKfycbw1jBVMKCNWtFeJlfIfyTOai3ujFVX7YqBLbJzk_t2uplz7LV5n1UZ5Vre2Y_hkGySx/exec', // Replace with your ajax url
+                        type : 'POST',
+                        async: true,
+                        data : postData,
+                        contentType: "application/json",
+                        beforeSend: function(xhr){
+                            $("#btnSendMessage").prop("disabled", true);
+                        },
+                        success : function(data) {              
+                            alert('Data: '+data); // Success callback
+                            $("#btnSendMessage").prop("disabled", false);
+                        },
+                        error : function(request,error){
+                            alert("ERROR: "+JSON.stringify(request)); // Error callback
+                            $("#btnSendMessage").prop("disabled", false);
+                        }
+                    });
+                }
+            })
         }); 
+
+        function validateMessageForm(){
+            //Clean error message before check
+            $('#your_name').closest("div").find("span").first().remove();
+            $('#message_content').closest("div").find("span").first().remove();
+            //Validate
+            let result = true;
+            if($('#your_name').val() == null || $('#your_name').val() == ''){
+                $('#your_name').closest("div").append("<span class='text-danger'>Vui lòng nhập tên của bạn!</span>");
+                result = false;
+            }
+            if($('#message_content').val() == null || $('#message_content').val() == ''){
+                $('#message_content').closest("div").append("<span class='text-danger'>Vui lòng nhập nội dung!</span>");
+                result = false;
+            }
+            return result;
+        }
     </script>
 
 </body>
