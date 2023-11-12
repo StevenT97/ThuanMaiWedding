@@ -615,7 +615,7 @@
                                                     <div class="col-lg-12 form-group">
                                                         <div class="heart-checkbox-style">
                                                             <label class="heart-checkbox">Thả tym
-                                                                <input type="checkbox" name="heartdrop" checked="checked">
+                                                                <input type="checkbox" id="heartdrop" name="heartdrop" checked="checked">
                                                                 <span class="checkmark"></span>
                                                             </label>
                                                         </div>
@@ -951,17 +951,21 @@
 
                 if(validateMessageForm()){
                     let postData = {
-                            param1 : $('#your_name').val(),
-                            param2 : $('#message_content').val()
-
+                            friendName : $('#your_name').val(),
+                            friendMessage : $('#message_content').val(),
+                            isDropHeart: $('#heartdrop').prop('checked')
                         };
+                    //Use CORS Anywhere proxy to bypass CORS policy
+                    var proxyUrl = 'https://cors-anywhere.herokuapp.com/';
                     //Send request
                     $.ajax({
-                        url : 'https://script.google.com/macros/s/AKfycbwRgtHzuWPTYwo8Uti0OreqvMyBdstzFW_LjiLNPbg_wbGh20gMD1AIXFkprZRTuMCb/exec', // Replace with your ajax url
+                        url : proxyUrl + 'https://script.google.com/macros/s/AKfycbyFZOfScq-7Zil4fF7XJiS9l0iJTX80gwP3CqeUxbAHhRe5vulMEDEgEoGj8bnIIcH_/exec', // Replace with your ajax url
                         type : 'POST',
                         async: true,
                         data : JSON.stringify(postData),
-                        contentType: "application/json",
+                        headers: {
+                            "Content-Type" : "application/json"
+                        },
                         beforeSend: function(xhr){
                             $("#btnSendMessage").prop("disabled", true);
                         },
