@@ -303,7 +303,7 @@ let daysBox = document.querySelector(".days");
 let hrsBox = document.querySelector(".hrs");
 let minBox = document.querySelector(".min");
 let secBox = document.querySelector(".sec");
-let countDownDate = new Date("Dec 09, 2023 18:00:00").getTime();
+let countDownDate = new Date("Dec 02, 2023 10:00:00").getTime();
 
 // COUNT DOWN FUNCTION
 
