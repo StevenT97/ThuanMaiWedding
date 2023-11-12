@@ -978,11 +978,17 @@
                             $("#thankYouModal").modal("show", "fast");
                             $("#btnSendMessage").prop("disabled", false);
                             $("#btnSendMessage span").text("Gửi");
+                            //Clear old content
+                            $('#your_name').val('');
+                            $('#message_content').val('');
                         },
                         error : function(request,error){
                             $("#thankYouModal").modal("show", "fast");
                             $("#btnSendMessage").prop("disabled", false);
                             $("#btnSendMessage span").text("Gửi");
+                            //Clear old content
+                            $('#your_name').val('');
+                            $('#message_content').val('');
                         }
                     });
                 }
