@@ -3085,7 +3085,7 @@ body.hide-scroll {
     border-radius: 100%;
     transform: translate(-50%, 0);
     z-index: 9;
-    top: -60px;
+    top: -15px;
 }
 
 .home-3 .love-story.heart-icon:before {
@@ -3211,7 +3211,7 @@ body.hide-scroll {
     }
     .home-3 .timeline-2 .story-timeline:last-child:before {
         left: 20px;
-        top: 260px;
+        top: 300px;
     }
     .home-3 .timeline-2 .story-timeline.left .content {
         padding: 30px 30px 30px 80px;
@@ -3232,7 +3232,11 @@ body.hide-scroll {
         height: 50px;
     }
     .home-3 .timeline-2 .story-card .story-img img {
-        height: 250px;
+        height: 250px !important;
+    }
+    .home-3 .timeline-2 .story-card .story-img .dinh-hon {
+        object-position: unset !important;
+        height: 300px !important;
     }
     .home-3 .on-time,
     .home-3 .love-story,
