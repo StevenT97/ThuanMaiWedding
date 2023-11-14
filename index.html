@@ -1041,9 +1041,10 @@
                         };
                     //Use my proxy to bypass CORS policy
                     var proxyUrl = 'https://cultured-ninth-carrot.glitch.me/';
+                    var myAPI = 'https://script.google.com/macros/s/AKfycbxx0LH4i-N3sN8hdzWxf_79WBPP_67M9OyA5AiG-Ce2qIapmEV0Fz7LVY807FRc89Uj/exec'
                     //Send request
                     $.ajax({
-                        url : proxyUrl + 'https://script.google.com/macros/s/AKfycbyFZOfScq-7Zil4fF7XJiS9l0iJTX80gwP3CqeUxbAHhRe5vulMEDEgEoGj8bnIIcH_/exec', // Replace with your ajax url
+                        url : proxyUrl + myAPI,
                         type : 'POST',
                         async: true,
                         data : JSON.stringify(postData),
