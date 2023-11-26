@@ -3085,7 +3085,7 @@ body.hide-scroll {
     border-radius: 100%;
     transform: translate(-50%, 0);
     z-index: 9;
-    top: -15px;
+    top: -45px;
 }
 
 .home-3 .love-story.heart-icon:before {
@@ -3211,7 +3211,7 @@ body.hide-scroll {
     }
     .home-3 .timeline-2 .story-timeline:last-child:before {
         left: 20px;
-        top: 300px;
+        top: 250px;
     }
     .home-3 .timeline-2 .story-timeline.left .content {
         padding: 30px 30px 30px 80px;
