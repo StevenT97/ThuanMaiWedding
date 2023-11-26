@@ -164,6 +164,7 @@
         }
         .accomodation-box-1 {
             flex-direction: column;
+            align-items: flex-start;
         }
         .accomodation-box-1 img,
         .accomodation-box-2 img {
