@@ -657,7 +657,7 @@
                                                     <div class="col-lg-12 form-group">
                                                         <img src="assets/images/icons/user.svg" class="input-img"
                                                             alt="user" style="top: 25px">
-                                                        <input type="text" id="your_name" name="your_name" class="form-control" placeholder="Tên của bạn">
+                                                        <input type="text" id="your_name" name="your_name" class="form-control" maxlength="100" placeholder="Tên của bạn">
                                                     </div>
                                                     <div class="col-lg-12 form-group">
                                                         <div class="heart-checkbox-style">
@@ -668,7 +668,7 @@
                                                         </div>
                                                     </div>
                                                     <div class="col-lg-12 form-group">
-                                                        <textarea rows="5" class="form-control ps-3" id="message_content" name="message_content" placeholder="Lời chúc đến cô dâu chú rể ^^"></textarea>
+                                                        <textarea rows="5" class="form-control ps-3" id="message_content" name="message_content" maxlength="2000" placeholder="Lời chúc đến cô dâu chú rể ^^"></textarea>
                                                     </div>
                                                     <div class="col-lg-12">
                                                         <button type="button" id="btnSendMessage" class="btn primary-btn w-100 c-send-invite-btn mt-0">
@@ -994,7 +994,7 @@
                         };
                     //Use my proxy to bypass CORS policy
                     var proxyUrl = 'https://cultured-ninth-carrot.glitch.me/';
-                    var myAPI = 'https://script.google.com/macros/s/AKfycbxx0LH4i-N3sN8hdzWxf_79WBPP_67M9OyA5AiG-Ce2qIapmEV0Fz7LVY807FRc89Uj/exec'
+                    var myAPI = 'https://script.google.com/macros/s/AKfycbzOlSJjkhwoUQKR8IYSyhf4VfIlaMNo4HvdlKayPbC_nhybERJykvJty61a0XA5WoQ/exec'
                     //Send request
                     $.ajax({
                         url : proxyUrl + myAPI,
@@ -1009,20 +1009,19 @@
                             $("#btnSendMessage span").text("Đang gửi...");
                         },
                         success : function(data) {
+                            //Send succeed
                             $("#thankYouModal").modal("show", "fast");
-                            $("#btnSendMessage").prop("disabled", false);
-                            $("#btnSendMessage span").text("Gửi");
-                            //Clear old content
-                            $('#your_name').val('');
-                            $('#message_content').val('');
                         },
                         error : function(request,error){
+                            //Send error - ...
                             $("#thankYouModal").modal("show", "fast");
-                            $("#btnSendMessage").prop("disabled", false);
+                        },
+                        complete: function(){
                             $("#btnSendMessage span").text("Gửi");
                             //Clear old content
                             $('#your_name').val('');
                             $('#message_content').val('');
+                            $("#btnSendMessage").prop("disabled", false);
                         }
                     });
                 }
@@ -1031,6 +1030,8 @@
             $("#btnCloseThankYouModal").on('click', function(){
                 $("#thankYouModal").modal("hide");
             });
+
+            wakeUpProxy();
 
         }); 
 
@@ -1049,6 +1050,30 @@
                 result = false;
             }
             return result;
+        }
+
+        function wakeUpProxy(){
+            var proxyUrl = 'https://cultured-ninth-carrot.glitch.me/';
+            var myAPI = 'https://script.google.com/macros/s/AKfycbzOlSJjkhwoUQKR8IYSyhf4VfIlaMNo4HvdlKayPbC_nhybERJykvJty61a0XA5WoQ/exec'
+            //Send request
+            $.ajax({
+                        url : proxyUrl + myAPI,
+                        type : 'POST',
+                        async: true,
+                        data : JSON.stringify({}),
+                        headers: {
+                            "Content-Type" : "application/json"
+                        },
+                        beforeSend: function(xhr){
+                            console.log("Wake up my proxy!");
+                        },
+                        success : function(data) {
+                            console.log("Wake up my proxy - succeed!")
+                        },
+                        error : function(request,error){
+                            console.log("Wake up my proxy - error!")
+                        }
+                    });
         }
 
         
