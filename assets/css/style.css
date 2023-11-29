@@ -2433,6 +2433,9 @@ select.form-control {
     .m-change-order {
         order: 2;
     }
+    .home-banner-main .fixed-content-slider {
+        top: 54% !important;
+    }
 }
 
 
@@ -5110,7 +5113,7 @@ ul.dropdown-menu.c-drpdwn-menu.c-drpdwn-menu-right.show {
 
 .home-banner-main .fixed-content-slider {
     position: absolute;
-    top: 50%;
+    top: 52%;
     left: 50%;
     transform: translate(-50%, -50%);
     z-index: 99;

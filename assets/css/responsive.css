@@ -211,7 +211,7 @@
             width: 100%;
             background: #fff;
             z-index: 999;
-            padding: 10px 0px;
+            padding: 0px;
         }
         /* drpdwn */
         .dropdown-menu>li:hover>.submenu {
