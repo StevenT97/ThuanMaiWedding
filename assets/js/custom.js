@@ -303,7 +303,7 @@ let daysBox = document.querySelector(".days");
 let hrsBox = document.querySelector(".hrs");
 let minBox = document.querySelector(".min");
 let secBox = document.querySelector(".sec");
-let countDownDate = new Date("Dec 02, 2023 10:00:00").getTime();
+let countDownDate = new Date("Dec 09, 2023 19:00:00").getTime();
 
 // COUNT DOWN FUNCTION
 
@@ -330,7 +330,7 @@ if (countDownBox && daysBox && hrsBox && minBox && secBox && countDownDate) {
         // IF FINISH
         if (distance < 0) {
             clearInterval(x);
-            countDownBox.innerHTML = "¡FELICIDADES!";
+            countDownBox.innerHTML = "";
         }
     }, 1000);
 }
